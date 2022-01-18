@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Deezer API OAuth dancer</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font: 20px Arial, sans-serif;
+        align-content: baseline;
+        height: 50vh;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      {% for line in lines %} {{ line }}
+      <br />
+      {% endfor %} {% for label, url in links.items() %}
+      <a href="{{ url }}">{{ label }}</a>
+      <br />
+      {% endfor %}
+    </p>
+  </body>
+</html>

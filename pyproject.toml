@@ -22,13 +22,19 @@ packages = [
 "Bug Tracker" = "https://github.com/browniebroke/deezer-oauth-cli/issues"
 "Changelog" = "https://deezer-oauth-cli.readthedocs.io/changelog.html"
 
+[tool.poetry.scripts]
+deezer-oauth = "deezer_oauth.main:app"
+
 [tool.poetry.dependencies]
 python = "^3.7"
+requests = "^2.27.1"
+typer = {extras = ["all"], version = "^0.4.0"}
 
 # Documentation Dependencies
 Sphinx = {version = "^4.0.0", optional = true}
 sphinx-rtd-theme = {version = "^1.0.0", optional = true}
 myst-parser = {version = "^0.16.0", optional = true}
+Jinja2 = "^3.0.3"
 
 [tool.poetry.extras]
 docs = [
