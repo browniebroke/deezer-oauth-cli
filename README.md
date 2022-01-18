@@ -4,9 +4,6 @@
   <a href="https://github.com/browniebroke/deezer-oauth-cli/actions?query=workflow%3ACI">
     <img src="https://img.shields.io/github/workflow/status/browniebroke/deezer-oauth-cli/CI/main?label=CI&logo=github&style=flat-square" alt="CI Status" >
   </a>
-  <a href="https://deezer-oauth-cli.readthedocs.io">
-    <img src="https://img.shields.io/readthedocs/deezer-oauth-cli.svg?logo=read-the-docs&logoColor=fff&style=flat-square" alt="Documentation Status">
-  </a>
   <a href="https://codecov.io/gh/browniebroke/deezer-oauth-cli">
     <img src="https://img.shields.io/codecov/c/github/browniebroke/deezer-oauth-cli.svg?logo=codecov&logoColor=fff&style=flat-square" alt="Test coverage percentage">
   </a>
@@ -32,11 +29,32 @@
 
 A small CLI to quickly obtain an API token for Deezer API.
 
+Obtaining API token to develop API applications can be complicated and sometimes feel like a chicken and egg situation: it's hard to play with the API without a token, but it can be difficult to get a token without an application to do the OAuth flow.
+
+Given the app ID and secret, this tool lets you quickly get an API token.
+
 ## Installation
 
 Install this via pip (or your favourite package manager):
 
 `pip install deezer-oauth-cli`
+
+## Usage
+
+Before starting to use this tool, you first need to declare your Deezer app in [their developer portal](https://developers.deezer.com). Create a new app with the following Redirect URL: `http://localhost:8080/oauth/return`.
+
+Once created, Deezer will generate an application ID and secret key for you, that's the 2 parameters that you need to run this tool:
+
+```shell
+$ deezer-oauth APP_ID APP_SECRET
+```
+
+This will:
+
+- Spin up a webserver in the background running at `http://localhost:8080`.
+- Open your browser to grant authorisation access to your Deezer account.
+- Redirect to a page showing the API token & expiry.
+- Write the token to a `.env` file (note: this will overwrite the entire file).
 
 ## Contributors ✨
 
