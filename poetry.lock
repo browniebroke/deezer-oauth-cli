@@ -448,6 +448,20 @@ pytest = ">=4.6"
 testing = ["fields", "hunter", "process-tests", "six", "pytest-xdist", "virtualenv"]
 
 [[package]]
+name = "pytest-srcpaths"
+version = "1.2.1"
+description = "Add paths to sys.path"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+pytest = ">=6.2.0"
+
+[package.extras]
+test = ["tox"]
+
+[[package]]
 name = "pytz"
 version = "2021.3"
 description = "World timezone definitions, modern and historical"
@@ -765,7 +779,7 @@ docs = ["myst-parser", "Sphinx", "sphinx-rtd-theme"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "9fe7286594ccd784f94600b8f04e08d3f46643ed84d59c4bdf39480fe9a819e9"
+content-hash = "4952886d1121af5d6d797c7ea4d4adb7d52e82a6a5ad455dd2fca31c1acdaa99"
 
 [metadata.files]
 alabaster = [
@@ -1031,6 +1045,10 @@ pytest = [
 pytest-cov = [
     {file = "pytest-cov-3.0.0.tar.gz", hash = "sha256:e7f0f5b1617d2210a2cabc266dfe2f4c75a8d32fb89eafb7ad9d06f6d076d470"},
     {file = "pytest_cov-3.0.0-py3-none-any.whl", hash = "sha256:578d5d15ac4a25e5f961c938b85a05b09fdaae9deef3bb6de9a6e766622ca7a6"},
+]
+pytest-srcpaths = [
+    {file = "pytest-srcpaths-1.2.1.tar.gz", hash = "sha256:78d71b9a2ece6839654421400c4ec78b6b1c1c101cdeda958acb08f1c6847216"},
+    {file = "pytest_srcpaths-1.2.1-py3-none-any.whl", hash = "sha256:222b68659e4bd401034b45b38b81f4103afb12807128460e19b6fb82b0e227e7"},
 ]
 pytz = [
     {file = "pytz-2021.3-py2.py3-none-any.whl", hash = "sha256:3672058bc3453457b622aab7a1c3bfd5ab0bdae451512f6cf25f64ed37f5b87c"},
