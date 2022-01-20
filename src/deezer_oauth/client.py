@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from urllib.parse import urlencode
+from urllib.parse import parse_qsl, urlencode
 
 import requests
 
@@ -51,5 +51,5 @@ class OAuthDancer:
         response = requests.get(url)
         content = response.content.decode()
         # The body looks like this: 'access_token=blah&expires=1234'
-        # -> parse this to a dictionary
-        return dict(tuple(p.split("=", 1)) for p in content.split("&"))
+        # -> parse this as querystring and convert to a dictionary
+        return dict(parse_qsl(content))
