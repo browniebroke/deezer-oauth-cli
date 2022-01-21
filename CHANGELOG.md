@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.1 (2022-01-21)
+### Fix
+* Don't overwrite unrelated content in .env file ([`f5467ee`](https://github.com/browniebroke/deezer-oauth-cli/commit/f5467ee3c654fa92b8e77b9d12a3aeb827b7ae9c))
+
 ## v0.1.0 (2022-01-19)
 ### Feature
 * Initial version ([`ee2e537`](https://github.com/browniebroke/deezer-oauth-cli/commit/ee2e537f6e3bf1a16820c8207482d18443cc06b9))
