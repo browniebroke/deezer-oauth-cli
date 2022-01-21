@@ -12,7 +12,7 @@ app = typer.Typer()
 
 
 @app.command()
-def main(app_id: str, app_secret: str):
+def main(app_id: str, app_secret: str) -> None:
     """
     Obtain an API token from Deezer.
 

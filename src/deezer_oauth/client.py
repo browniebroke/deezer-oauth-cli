@@ -19,7 +19,7 @@ class OAuthDancer:
         self.app_id = app_id
         self.app_secret = app_secret
 
-    def get_auth_page(self):
+    def get_auth_page(self) -> str:
         """Build the URL of the auth page where the process starts."""
         query = urlencode(
             {
