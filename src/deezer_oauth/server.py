@@ -10,7 +10,7 @@ if TYPE_CHECKING:
     from deezer_oauth.client import OAuthDancer
 
 
-def run_server(oauth_dancer: OAuthDancer):
+def run_server(oauth_dancer: OAuthDancer) -> None:
     """Start local webserver."""
     webserver = LocalHTTPServer(
         oauth_dancer,
@@ -43,7 +43,7 @@ class LocalRequestHandler(BaseHTTPRequestHandler):
     server: LocalHTTPServer
 
     @property
-    def oauth_dancer(self):
+    def oauth_dancer(self) -> OAuthDancer:
         """Shortcut to access the `OAuthDancer` instance."""
         return self.server.oauth_dancer
 
@@ -74,12 +74,12 @@ class LocalRequestHandler(BaseHTTPRequestHandler):
         write_env_file(token_data["access_token"])
         raise SystemExit("All Done")
 
-    def default_route(self):
+    def default_route(self) -> None:
         """Default route rendering a generic page."""
         start_url = self.oauth_dancer.get_auth_page()
         self._render_content(f'<a href="{start_url}">Start Oauth Flow</a>')
 
-    def _render_content(self, content: str):
+    def _render_content(self, content: str) -> None:
         """Render the provided content in an HTML page."""
         self.send_response(200)
         self.send_header("Content-type", "text/html")
