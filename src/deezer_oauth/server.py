@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 from deezer_oauth.constants import HOST_NAME, REDIRECT_PATH, SERVER_PORT
 from deezer_oauth.files import write_env_file
@@ -32,7 +32,7 @@ class LocalHTTPServer(HTTPServer):
 
     oauth_dancer: OAuthDancer
 
-    def __init__(self, dancer: OAuthDancer, *args, **kwargs) -> None:
+    def __init__(self, dancer: OAuthDancer, *args: Any, **kwargs: Any) -> None:
         self.oauth_dancer = dancer
         super().__init__(*args, **kwargs)
 
