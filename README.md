@@ -54,7 +54,7 @@ This will:
 - Spin up a webserver in the background running at `http://localhost:8080`.
 - Open your browser to grant authorisation access to your Deezer account.
 - Redirect to a page showing the API token & expiry.
-- Write the token to a `.env` file (note: this will overwrite the entire file).
+- Write the token to a `.env` file.
 
 ## Contributors ✨
 

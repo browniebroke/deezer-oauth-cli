@@ -20,9 +20,38 @@ class TestWriteEnvFile:
         assert env_file.exists()
         assert env_file.read_text("utf-8") == "API_TOKEN=qwerty\n"
 
-    def test_existing(self, workspace):
+    @pytest.mark.parametrize(
+        ("before", "after"),
+        [
+            (
+                "SOMETHING=test\n",
+                "SOMETHING=test\nAPI_TOKEN=new\n",
+            ),
+            (
+                "SOMETHING=test\nAPI_TOKEN=old\n",
+                "SOMETHING=test\nAPI_TOKEN=new\n",
+            ),
+            (
+                "OTHER_API_TOKEN=test\nAPI_TOKEN=old\n",
+                "OTHER_API_TOKEN=test\nAPI_TOKEN=new\n",
+            ),
+            (
+                "API_TOKEN=old\nTHING=test",
+                "API_TOKEN=new\nTHING=test\n",
+            ),
+            (
+                "API_TOKEN=old\n",
+                "API_TOKEN=new\n",
+            ),
+            (
+                "API_TOKEN=old",
+                "API_TOKEN=new\n",
+            ),
+        ],
+    )
+    def test_update(self, workspace, before, after):
         env_file = workspace / ".env"
-        env_file.write("SOMETHING=test\n", "w")
-        write_env_file("uiop")
+        env_file.write(before, "w")
+        write_env_file("new")
         assert env_file.exists()
-        assert env_file.read_text("utf-8") == "API_TOKEN=uiop\n"
+        assert env_file.read_text("utf-8") == after
