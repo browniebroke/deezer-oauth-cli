@@ -3,7 +3,7 @@ from __future__ import annotations
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from typing import TYPE_CHECKING, Any
 
-from deezer_oauth.constants import HOST_NAME, REDIRECT_PATH, SERVER_PORT
+from deezer_oauth.constants import HOST_NAME, OAUTH_RETURN_PATH, SERVER_PORT
 from deezer_oauth.files import write_env_file
 
 if TYPE_CHECKING:
@@ -37,6 +37,18 @@ class LocalHTTPServer(HTTPServer):
         super().__init__(*args, **kwargs)
 
 
+PAGE_CONTENT = """
+<html>
+<head><title>Deezer API OAuth dancer</title></head>
+<body>
+<p>
+    {content}
+</p>
+</body>
+</html>
+"""
+
+
 class LocalRequestHandler(BaseHTTPRequestHandler):
     """Simple HTTP request handler to perform the OAuth dance."""
 
@@ -49,14 +61,14 @@ class LocalRequestHandler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:
         """Route GET requests to the right handler."""
-        if self.path.startswith(REDIRECT_PATH):
-            self.redirect_route()
+        if self.path.startswith(OAUTH_RETURN_PATH):
+            self.return_route()
         else:
             self.default_route()
 
-    def redirect_route(self) -> None:
+    def return_route(self) -> None:
         """
-        Handle the redirect route.
+        Handle the route for the OAuth return page.
 
         Once the OAuth is approved, Deezer redirects to this route with `?code=blah`
         at the end of the URL.
@@ -66,11 +78,12 @@ class LocalRequestHandler(BaseHTTPRequestHandler):
         route, params_str = self.path.split("?", 1)
         query_params = dict(p.split("=", 1) for p in params_str.split("&"))
         token_data = self.oauth_dancer.get_token(query_params["code"])
-        self._render_content(
-            f"Token = {token_data['access_token']}"
-            f"<br>"
-            f"Expires = {token_data['expires']}"
+        content = (
+            f"Token: {token_data['access_token']}"
+            "<br>"
+            f"Expires: {token_data['expires']}"
         )
+        self._render_content(content)
         write_env_file(token_data["access_token"])
         raise SystemExit("All Done")
 
@@ -84,14 +97,5 @@ class LocalRequestHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        self.wfile.write(
-            bytes(
-                "<html>"
-                "<head><title>Deezer API OAuth dancer</title></head>"
-                "<body>"
-                f"<p>{content}</p>"
-                "</body>"
-                "</html>",
-                "utf-8",
-            )
-        )
+        content_str = PAGE_CONTENT.format(content=content)
+        self.wfile.write(content_str.encode())

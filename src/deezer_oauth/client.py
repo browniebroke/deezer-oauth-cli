@@ -4,7 +4,7 @@ from urllib.parse import parse_qsl, urlencode
 
 import requests
 
-from deezer_oauth.constants import HOST_NAME, REDIRECT_PATH, SERVER_PORT
+from deezer_oauth.constants import HOST_NAME, OAUTH_RETURN_PATH, SERVER_PORT
 
 
 class OAuthDancer:
@@ -13,7 +13,7 @@ class OAuthDancer:
     base_url: str = "https://connect.deezer.com"
     app_id: str
     app_secret: str
-    redirect_url: str = f"http://{HOST_NAME}:{SERVER_PORT}{REDIRECT_PATH}"
+    redirect_url: str = f"http://{HOST_NAME}:{SERVER_PORT}{OAUTH_RETURN_PATH}"
 
     def __init__(self, app_id: str, app_secret: str) -> None:
         self.app_id = app_id
