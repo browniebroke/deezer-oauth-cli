@@ -20,7 +20,6 @@ class TestOAuthDancer:
         responses.add(
             responses.GET,
             "https://connect.deezer.com/oauth/access_token.php",
-            match_querystring=False,
             body="access_token=blah&expires=1234",
         )
         dancer = OAuthDancer(app_id="abcd", app_secret="secret")
