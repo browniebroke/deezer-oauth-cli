@@ -1,3 +1,5 @@
+import pytest
+
 from deezer_oauth.client import OAuthDancer
 from deezer_oauth.server import run_server
 
@@ -10,10 +12,12 @@ class TestRunServer:
         serve_forever.assert_called_once()
         server_close.assert_called_once()
 
-    def test_interrupted(self, mocker):
+    @pytest.mark.parametrize("exception_class", [KeyboardInterrupt, SystemExit])
+    def test_interrupted(self, mocker, exception_class):
+        mocker.patch("deezer_oauth.server.HTTPServer.__init__")
         serve_forever = mocker.patch(
             "deezer_oauth.server.HTTPServer.serve_forever",
-            side_effect=KeyboardInterrupt(),
+            side_effect=exception_class(),
         )
         server_close = mocker.patch("deezer_oauth.server.HTTPServer.server_close")
         run_server(OAuthDancer("a", "b"))
