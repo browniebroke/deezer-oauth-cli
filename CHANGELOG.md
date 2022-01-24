@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.2 (2022-01-24)
+### Fix
+* Fix parsing of query params in return route ([`1b2371f`](https://github.com/browniebroke/deezer-oauth-cli/commit/1b2371fc18b0c59c02112f5cd095208ac173534c))
+
 ## v0.1.1 (2022-01-21)
 ### Fix
 * Don't overwrite unrelated content in .env file ([`f5467ee`](https://github.com/browniebroke/deezer-oauth-cli/commit/f5467ee3c654fa92b8e77b9d12a3aeb827b7ae9c))
