@@ -68,6 +68,14 @@ pythonpath = ["src"]
 [tool.coverage.run]
 branch = true
 
+[tool.coverage.report]
+ignore_errors = true
+exclude_lines = [
+    "pragma: no cover",
+    "@overload",
+    "if TYPE_CHECKING"
+]
+
 [tool.isort]
 profile = "black"
 known_first_party = ["deezer_oauth", "tests"]
