@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from typing import TYPE_CHECKING, Any
+from urllib.parse import parse_qsl
 
 from deezer_oauth.constants import HOST_NAME, OAUTH_RETURN_PATH, SERVER_PORT
 from deezer_oauth.files import write_env_file
@@ -75,8 +76,14 @@ class LocalRequestHandler(BaseHTTPRequestHandler):
 
         Grab this code, make the API call to obtain the token and display it.
         """
-        route, params_str = self.path.split("?", 1)
-        query_params = dict(p.split("=", 1) for p in params_str.split("&"))
+        path_bits = self.path.split("?", 1)
+        if len(path_bits) < 2:
+            self._render_content(
+                "Invalid request: missing query parameters",
+                status=400,
+            )
+            return
+        query_params = dict(parse_qsl(path_bits[1]))
         token_data = self.oauth_dancer.get_token(query_params["code"])
         content = (
             f"Token: {token_data['access_token']}"
@@ -92,9 +99,9 @@ class LocalRequestHandler(BaseHTTPRequestHandler):
         start_url = self.oauth_dancer.get_auth_page()
         self._render_content(f'<a href="{start_url}">Start Oauth Flow</a>')
 
-    def _render_content(self, content: str) -> None:
+    def _render_content(self, content: str, status: int = 200) -> None:
         """Render the provided content in an HTML page."""
-        self.send_response(200)
+        self.send_response(status)
         self.send_header("Content-type", "text/html")
         self.end_headers()
         content_str = PAGE_CONTENT.format(content=content)
