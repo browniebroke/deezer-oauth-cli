@@ -76,6 +76,8 @@ class TestLocalRequestHandler:
         self.server_started.wait()
         yield
         thread.stop()
+        # clear assignment to avoid dangling thread
+        thread = None  # type: ignore[assignment]
         support.threading_cleanup(*_threads)
 
     def request(self, uri, method="GET"):
