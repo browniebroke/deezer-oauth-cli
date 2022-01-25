@@ -1,6 +1,6 @@
 # Contributing
 
-Contributions are welcome, and they are greatly appreciated! Every little bit helps, and credit will always be given.
+Contributions are welcome, and they are greatly appreciated! Every little helps, and credit will always be given.
 
 You can contribute in many ways:
 
@@ -8,9 +8,7 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs at <https://github.com/browniebroke/deezer-oauth-cli/issues>.
-
-If you are reporting a bug, please include:
+Report bugs to [our issue page][gh-issues]. If you are reporting a bug, please include:
 
 - Your operating system name and version.
 - Any details about your local setup that might be helpful in troubleshooting.
@@ -24,19 +22,13 @@ Look through the GitHub issues for bugs. Anything tagged with "bug" and "help wa
 
 Look through the GitHub issues for features. Anything tagged with "enhancement" and "help wanted" is open to whoever wants to implement it.
 
-### Write Documentation
-
-Deezer OAuth CLI could always use more documentation, whether as part of the official Deezer OAuth CLI docs, in docstrings, or even on the web in blog posts, articles, and such.
-
 ### Submit Feedback
 
-The best way to send feedback is to file an issue at <https://github.com/browniebroke/deezer-oauth-cli/issues>.
-
-If you are proposing a feature:
+The best way to send feedback [our issue page][gh-issues] on GitHub. If you are proposing a feature:
 
 - Explain in detail how it would work.
 - Keep the scope as narrow as possible, to make it easier to implement.
-- Remember that this is a volunteer-driven project, and that contributions are welcome :)
+- Remember that this is a volunteer-driven project, and that contributions are welcome 😊
 
 ## Get Started!
 
@@ -50,12 +42,10 @@ Ready to contribute? Here's how to set yourself up for local development.
    $ git clone git@github.com:your_name_here/deezer-oauth-cli.git
    ```
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development:
+3. Install the project dependencies with [Poetry](https://python-poetry.org):
 
    ```shell
-   $ mkvirtualenv deezer_oauth
-   $ cd deezer-oauth-cli/
-   $ python setup.py develop
+   $ poetry install
    ```
 
 4. Create a branch for local development:
@@ -66,33 +56,47 @@ Ready to contribute? Here's how to set yourself up for local development.
 
    Now you can make your changes locally.
 
-5. When you're done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox:
+5. When you're done making changes, check that your changes pass our tests:
 
    ```shell
-   $ flake8 deezer_oauth tests
-   $ pytest
-   $ tox
+   $ poetry run pytest
    ```
 
-   To get flake8 and tox, pip install them into your virtualenv.
+6. Linting is done through [pre-commit](https://pre-commit.com). Provided you have the tool installed globally, you can run them all as one-off:
 
-6. Commit your changes and push your branch to GitHub:
+   ```shell
+   $ pre-commit run -a
+   ```
+
+   Or better, install the hooks once and have them run automatically each time you commit:
+
+   ```shell
+   $ pre-commit install
+   ```
+
+7. Commit your changes and push your branch to GitHub:
 
    ```shell
    $ git add .
-   $ git commit -m "Your detailed description of your changes."
+   $ git commit -m "feat(something): your detailed description of your changes"
    $ git push origin name-of-your-bugfix-or-feature
    ```
 
-7. Submit a pull request through the GitHub website.
+   Note: the commit message should follow [the conventional commits](https://www.conventionalcommits.org). We run [`commitlint` on CI](https://github.com/marketplace/actions/commit-linter) to validate it, and if you've installed pre-commit hooks at the previous step, the message will be checked at commit time.
+
+8. Submit a pull request through the GitHub website or using the GitHub CLI (if you have it installed):
+
+   ```shell
+   $ gh pr create --fill
+   ```
 
 ## Pull Request Guidelines
 
 Before you submit a pull request, check that it meets these guidelines:
 
-1.  The pull request should include tests.
-2.  If the pull request adds functionality, the docs should be updated. Put your new functionality into a function with a docstring, and add the feature to the list in README.rst.
-3.  The pull request should work for Python 3.6, 3.7 and 3.8. Check the build and make sure that the tests pass for all supported Python versions.
+1. Should include tests.
+2. If adding new functionality, the documentation should be updated. Put your new functionality into a function with a docstring, and make sure it's explained in the project's README.
+3. Should work for all supported Python versions. Check the CI and make sure that the tests pass everywhere.
 
 ## Tips
 
@@ -104,4 +108,4 @@ $ pytest tests
 
 ## Making a new release
 
-The deployment should be automated and can be triggered from the Semantic Release workflow in Github. The next version will be based on [the commit logs](https://python-semantic-release.readthedocs.io/en/latest/commit-log-parsing.html#commit-log-parsing). This is done by [python-semantic-release](https://python-semantic-release.readthedocs.io/en/latest/index.html) via a Github action.
+The deployment should be automated and can be triggered from the Semantic Release workflow in GitHub. The next version will be based on [the commit logs](https://python-semantic-release.readthedocs.io/en/latest/commit-log-parsing.html#commit-log-parsing). This is done by [python-semantic-release](https://python-semantic-release.readthedocs.io/en/latest/index.html) via a GitHub action.
