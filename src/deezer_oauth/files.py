@@ -10,7 +10,7 @@ def write_env_file(access_token: str) -> None:
     line_to_insert = f"{variable_name}={access_token}"
     env_path = Path(".env")
     if env_path.exists():
-        pattern = re.compile(fr"^{variable_name}=.*$")
+        pattern = re.compile(rf"^{variable_name}=.*$")
         content = env_path.read_text()
         updated_lines = []
         inserted = False
