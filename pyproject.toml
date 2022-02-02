@@ -52,7 +52,7 @@ pyupgrade = "^2.29"
 tox = "^3.20"
 # Should no longer be needed with pytest 7
 pytest-srcpaths = "^1.2"
-responses = "^0.17.0"
+responses = "^0.18.0"
 pytest-mock = "^3.6.1"
 
 [tool.semantic_release]
