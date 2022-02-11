@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.3 (2022-02-11)
+### Fix
+* Links to documentation on PyPI ([`f23355b`](https://github.com/browniebroke/deezer-oauth-cli/commit/f23355b9304e43fcbcc3ff062e9ecb0be4405aa2))
+
+### Documentation
+* Update contributing guide ([`48ba9b7`](https://github.com/browniebroke/deezer-oauth-cli/commit/48ba9b736aa204c2a7a4358834ae0a2ca3f19431))
+
 ## v0.1.2 (2022-01-24)
 ### Fix
 * Fix parsing of query params in return route ([`1b2371f`](https://github.com/browniebroke/deezer-oauth-cli/commit/1b2371fc18b0c59c02112f5cd095208ac173534c))
