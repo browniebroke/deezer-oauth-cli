@@ -27,7 +27,7 @@ deezer-oauth = "deezer_oauth.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-requests = "^2.27.1"
+requests = "^2.27"
 typer = {extras = ["all"], version = "^0.4.0"}
 
 [tool.poetry.dev-dependencies]
@@ -39,7 +39,7 @@ pytest-cov = "^3.0"
 pyupgrade = "^2.31"
 tox = "^3.20"
 responses = "^0.18.0"
-pytest-mock = "^3.6.1"
+pytest-mock = "^3.6"
 
 [tool.semantic_release]
 branch = "main"
