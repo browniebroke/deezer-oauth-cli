@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.0 (2022-02-27)
+### Feature
+* Integrate rich-click ([`5ad081c`](https://github.com/browniebroke/deezer-oauth-cli/commit/5ad081c3f7ce3dc6fcbc5fdbdd4e1883e69f236d))
+
 ## v0.1.3 (2022-02-11)
 ### Fix
 * Links to documentation on PyPI ([`f23355b`](https://github.com/browniebroke/deezer-oauth-cli/commit/f23355b9304e43fcbcc3ff062e9ecb0be4405aa2))
