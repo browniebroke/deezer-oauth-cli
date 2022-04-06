@@ -1,21 +1,14 @@
-import os
+from pathlib import Path
 
 import pytest
 
 from deezer_oauth.files import write_env_file
 
 
-@pytest.fixture
-def workspace(tmpdir):
-    cwd = os.getcwd()
-    os.chdir(tmpdir)
-    yield tmpdir
-    os.chdir(cwd)
-
-
 class TestWriteEnvFile:
-    def test_create(self, workspace):
-        env_file = workspace / ".env"
+    def test_create(self, fs):
+        env_file = Path(".env")
+        assert not env_file.exists()
         write_env_file("qwerty")
         assert env_file.exists()
         assert env_file.read_text("utf-8") == "API_TOKEN=qwerty\n"
@@ -49,9 +42,9 @@ class TestWriteEnvFile:
             ),
         ],
     )
-    def test_update(self, workspace, before, after):
-        env_file = workspace / ".env"
-        env_file.write(before, "w")
+    def test_update(self, before, after):
+        env_file = Path(".env")
+        env_file.write_text(before)
         write_env_file("new")
         assert env_file.exists()
-        assert env_file.read_text("utf-8") == after
+        assert env_file.read_text() == after
