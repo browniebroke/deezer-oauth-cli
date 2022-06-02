@@ -32,14 +32,10 @@ typer = {extras = ["all"], version = "^0.4.0"}
 rich-click = ">=1.0"
 
 [tool.poetry.dev-dependencies]
-black = "^22.1"
-flake8 = "^4.0"
-isort = "^5.10"
 pyfakefs = "^4.5"
 pytest = "^7.0"
 pytest-cov = "^3.0"
 pytest-mock = "^3.6"
-pyupgrade = "^2.31"
 responses = "^0.21.0"
 tox = "^3.20"
 
