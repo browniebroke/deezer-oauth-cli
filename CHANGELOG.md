@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.2 (2022-06-06)
+### Fix
+* **deps:** Revert PSR upgrade ([`9e737c1`](https://github.com/browniebroke/deezer-oauth-cli/commit/9e737c11d5e3da538a3a128f302a4b1475fe3425))
+
 ## v0.2.1 (2022-04-28)
 ### Fix
 * Use built-in Typer class from rich-click ([`3a206e5`](https://github.com/browniebroke/deezer-oauth-cli/commit/3a206e50e29a85e290d697d4f476bd8454fec66f))
