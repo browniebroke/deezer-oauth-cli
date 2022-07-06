@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.3 (2022-07-06)
+### Fix
+* **deps:** Update dependency typer to ^0.5.0 ([`5a472c6`](https://github.com/browniebroke/deezer-oauth-cli/commit/5a472c6aa09fea65eab7c2519f9efe0beaf30f92))
+
 ## v0.2.2 (2022-06-06)
 ### Fix
 * **deps:** Revert PSR upgrade ([`9e737c1`](https://github.com/browniebroke/deezer-oauth-cli/commit/9e737c11d5e3da538a3a128f302a4b1475fe3425))
