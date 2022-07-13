@@ -28,8 +28,8 @@ deezer-oauth = "deezer_oauth.main:app"
 [tool.poetry.dependencies]
 python = "^3.7"
 requests = "^2.27"
-typer = {extras = ["all"], version = "^0.6.0"}
-rich-click = ">=1.0"
+rich = ">=10"
+typer = {extras = ["all"], version = "^0.6.1"}
 
 [tool.poetry.dev-dependencies]
 pyfakefs = "^4.5"
