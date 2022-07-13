@@ -3,7 +3,8 @@ from __future__ import annotations
 
 import webbrowser
 
-from rich_click import typer
+import typer
+from rich import print
 
 from deezer_oauth.client import OAuthDancer
 from deezer_oauth.server import run_server
