@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.4 (2022-07-14)
+### Fix
+* Drop rich-click as it's natively supported by Typer now ([`18906f1`](https://github.com/browniebroke/deezer-oauth-cli/commit/18906f1a915e9ca7aa1b93cc7a8e0ab79c6e9e77))
+* **deps:** Update dependency typer to ^0.6.0 ([`d6763f7`](https://github.com/browniebroke/deezer-oauth-cli/commit/d6763f7874aacf61e932221cfb08a0f41d98d8c7))
+
 ## v0.2.3 (2022-07-06)
 ### Fix
 * **deps:** Update dependency typer to ^0.5.0 ([`5a472c6`](https://github.com/browniebroke/deezer-oauth-cli/commit/5a472c6aa09fea65eab7c2519f9efe0beaf30f92))
