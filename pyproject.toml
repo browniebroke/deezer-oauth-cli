@@ -34,7 +34,7 @@ typer = {extras = ["all"], version = "^0.6.1"}
 [tool.poetry.dev-dependencies]
 pyfakefs = "^4.5"
 pytest = "^7.0"
-pytest-cov = "^3.0"
+pytest-cov = "^4.0"
 pytest-mock = "^3.6"
 responses = "^0.21.0"
 
