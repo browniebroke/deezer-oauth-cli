@@ -11,7 +11,7 @@ class TestOAuthDancer:
             "https://connect.deezer.com/oauth/auth.php"
             "?app_id=1234"
             "&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Foauth%2Freturn"
-            "&perms=basic_access%2Cemail%2Cmanage_library"
+            "&perms=basic_access%2Cemail%2Cmanage_library%2Cmanage_community"
             "%2Cdelete_library%2Clistening_history"
         )
 

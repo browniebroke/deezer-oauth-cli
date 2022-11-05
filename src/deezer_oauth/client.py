@@ -30,6 +30,7 @@ class OAuthDancer:
                         "basic_access",
                         "email",
                         "manage_library",
+                        "manage_community",
                         "delete_library",
                         "listening_history",
                     ]
