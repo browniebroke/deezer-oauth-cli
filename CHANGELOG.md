@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.6 (2022-11-05)
+### Fix
+* **deps:** Update dependency typer to ^0.7.0 ([#171](https://github.com/browniebroke/deezer-oauth-cli/issues/171)) ([`a725165`](https://github.com/browniebroke/deezer-oauth-cli/commit/a725165e077a7cbfb9f221463aa0f1d035f2c909))
+
 ## v0.2.5 (2022-07-24)
 ### Fix
 * Bump version ([`f8bede4`](https://github.com/browniebroke/deezer-oauth-cli/commit/f8bede4465c429621b28dede4897fac7a1766b37))
