@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.0 (2022-11-09)
+### Feature
+* Ask for manage_community permission ([#172](https://github.com/browniebroke/deezer-oauth-cli/issues/172)) ([`5dafde2`](https://github.com/browniebroke/deezer-oauth-cli/commit/5dafde234e5f71161c6ea535aab35560f799e34c))
+
+### Documentation
+* Add prndrbr as a contributor for code ([#173](https://github.com/browniebroke/deezer-oauth-cli/issues/173)) ([`df8c5f7`](https://github.com/browniebroke/deezer-oauth-cli/commit/df8c5f76c69f795d2d44c28c34b6ecba5dd1b7b0))
+
 ## v0.2.6 (2022-11-05)
 ### Fix
 * **deps:** Update dependency typer to ^0.7.0 ([#171](https://github.com/browniebroke/deezer-oauth-cli/issues/171)) ([`a725165`](https://github.com/browniebroke/deezer-oauth-cli/commit/a725165e077a7cbfb9f221463aa0f1d035f2c909))
