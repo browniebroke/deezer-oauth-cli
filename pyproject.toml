@@ -31,7 +31,7 @@ requests = "^2.27"
 rich = ">=10"
 typer = {extras = ["all"], version = "^0.7.0"}
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 pyfakefs = "^5.0"
 pytest = "^7.0"
 pytest-cov = "^4.0"
