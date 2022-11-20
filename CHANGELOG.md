@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.0 (2022-11-20)
+### Feature
+* Officially support Python 3.10 & 3.11 ([#178](https://github.com/browniebroke/deezer-oauth-cli/issues/178)) ([`edecc1c`](https://github.com/browniebroke/deezer-oauth-cli/commit/edecc1c3557fe0d849bd14af8d5f793b920cd683))
+
 ## v0.3.0 (2022-11-09)
 ### Feature
 * Ask for manage_community permission ([#172](https://github.com/browniebroke/deezer-oauth-cli/issues/172)) ([`5dafde2`](https://github.com/browniebroke/deezer-oauth-cli/commit/5dafde234e5f71161c6ea535aab35560f799e34c))
