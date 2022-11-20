@@ -1,6 +1,11 @@
 import http.client
+import sys
 import threading
-from test import support
+
+if sys.version_info < (3, 10):
+    from test.support import threading_cleanup, threading_setup
+else:
+    from test.support.threading_helper import threading_setup, threading_cleanup
 
 import pytest
 
@@ -69,7 +74,7 @@ class TestLocalRequestHandler:
 
     @pytest.fixture
     def http_server(self):
-        _threads = support.threading_setup()
+        _threads = threading_setup()
         self.server_started = threading.Event()
         thread = ServerWrapperThread(self)
         thread.start()
@@ -78,7 +83,7 @@ class TestLocalRequestHandler:
         thread.stop()
         # clear assignment to avoid dangling thread
         thread = None  # type: ignore[assignment]
-        support.threading_cleanup(*_threads)
+        threading_cleanup(*_threads)
 
     def request(self, uri, method="GET"):
         self.connection = http.client.HTTPConnection(self.host, self.port)
