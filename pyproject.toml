@@ -21,6 +21,8 @@ packages = [
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/browniebroke/deezer-oauth-cli/issues"
 "Changelog" = "https://github.com/browniebroke/deezer-oauth-cli/blob/main/CHANGELOG.md"
+"Twitter" = "https://twitter.com/_BrunoAlla"
+"Mastodon" = "https://fosstodon.org/@browniebroke"
 
 [tool.poetry.scripts]
 deezer-oauth = "deezer_oauth.main:app"
