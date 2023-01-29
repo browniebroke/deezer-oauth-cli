@@ -1,7 +1,7 @@
 # Deezer OAuth CLI
 
 <p align="center">
-  <a href="https://github.com/browniebroke/deezer-oauth-cli/actions?query=workflow%3ACI">
+  <a href="https://github.com/browniebroke/deezer-oauth-cli/actions/workflows/ci.yml?query=branch%3Amain">
     <img src="https://img.shields.io/github/workflow/status/browniebroke/deezer-oauth-cli/CI/main?label=CI&logo=github&style=flat-square" alt="CI Status" >
   </a>
   <a href="https://codecov.io/gh/browniebroke/deezer-oauth-cli">
