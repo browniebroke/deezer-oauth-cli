@@ -38,7 +38,7 @@ pyfakefs = "^5.0"
 pytest = "^7.0"
 pytest-cov = "^4.0"
 pytest-mock = "^3.6"
-responses = "^0.22.0"
+responses = "^0.23.0"
 
 [tool.semantic_release]
 branch = "main"
