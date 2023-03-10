@@ -49,7 +49,7 @@ class OAuthDancer:
             }
         )
         url = f"{self.base_url}/oauth/access_token.php?{query}"
-        response = requests.get(url)
+        response = requests.get(url, timeout=10)
         content = response.content.decode()
         # The body looks like this: 'access_token=blah&expires=1234'
         # -> parse this as querystring and convert to a dictionary
