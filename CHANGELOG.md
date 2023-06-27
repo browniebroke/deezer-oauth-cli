@@ -2,6 +2,20 @@
 
 <!--next-version-placeholder-->
 
+## v1.0.0 (2023-06-27)
+
+### Feature
+
+* Drop support for Python 3.7 ([#294](https://github.com/browniebroke/deezer-oauth-cli/issues/294)) ([`14bf5ac`](https://github.com/browniebroke/deezer-oauth-cli/commit/14bf5accd486e7875ee485e3144880a7b0489fc6))
+
+### Breaking
+
+* Drop support for Python 3.7 as it reached EOL on June 27, 2023. More infos: https://devguide.python.org/versions/ ([`14bf5ac`](https://github.com/browniebroke/deezer-oauth-cli/commit/14bf5accd486e7875ee485e3144880a7b0489fc6))
+
+### Documentation
+
+* Update link for CI badge ([#215](https://github.com/browniebroke/deezer-oauth-cli/issues/215)) ([`35f042a`](https://github.com/browniebroke/deezer-oauth-cli/commit/35f042a3217a75792dbeb3078376fb4d3dfe22a9))
+
 ## v0.4.0 (2022-11-20)
 ### Feature
 * Officially support Python 3.10 & 3.11 ([#178](https://github.com/browniebroke/deezer-oauth-cli/issues/178)) ([`edecc1c`](https://github.com/browniebroke/deezer-oauth-cli/commit/edecc1c3557fe0d849bd14af8d5f793b920cd683))
