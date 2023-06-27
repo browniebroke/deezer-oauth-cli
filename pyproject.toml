@@ -28,7 +28,7 @@ packages = [
 deezer-oauth = "deezer_oauth.main:app"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 requests = "^2.27"
 rich = ">=10"
 typer = {extras = ["all"], version = "^0.9.0"}
