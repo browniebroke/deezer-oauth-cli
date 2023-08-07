@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.1.0 (2023-08-07)
+
+### Feature
+
+- Add official support for python 3.12 (#324) ([`1f12202`](https://github.com/browniebroke/deezer-oauth-cli/commit/1f12202abdd4c75e520260092caee0e91db1a967))
+
 ## v1.0.1 (2023-07-19)
 
 ### Fix
