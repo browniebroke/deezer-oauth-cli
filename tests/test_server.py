@@ -5,7 +5,7 @@ import threading
 if sys.version_info < (3, 10):
     from test.support import threading_cleanup, threading_setup
 else:
-    from test.support.threading_helper import threading_setup, threading_cleanup
+    from test.support.threading_helper import threading_cleanup, threading_setup
 
 import pytest
 
