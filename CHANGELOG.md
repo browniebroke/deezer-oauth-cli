@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.1.1 (2023-09-17)
+
+### Fix
+
+- Update dependency rich to v13.5.3 ([`7cb50ef`](https://github.com/browniebroke/deezer-oauth-cli/commit/7cb50ef2fad2c52858b68abff511cad975b222f5))
+
 ## v1.1.0 (2023-08-07)
 
 ### Feature
