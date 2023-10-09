@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.1.3 (2023-10-09)
+
+### Fix
+
+- Use truster publisher to release to pypi ([`8ec6a9d`](https://github.com/browniebroke/deezer-oauth-cli/commit/8ec6a9d9c8c4ffc44b6b13c1f44f11b9f52456ce))
+
 ## v1.1.2 (2023-09-30)
 
 ### Fix
