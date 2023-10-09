@@ -56,17 +56,19 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
 
   release:
-    runs-on: ubuntu-latest
-    environment: release
-    permissions:
-      # Use trusted publishing
-      id-token: write
     needs:
       - test
       - commitlint
 
+    runs-on: ubuntu-latest
+    environment: release
+    concurrency: release
+    permissions:
+      id-token: write
+      contents: write
+
     steps:
-      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: ${{ github.head_ref || github.ref_name }}
