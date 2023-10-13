@@ -27,6 +27,12 @@
   <img src="https://img.shields.io/pypi/l/deezer-oauth-cli.svg?style=flat-square" alt="License">
 </p>
 
+---
+
+**Source Code**: <a href="https://github.com/browniebroke/deezer-oauth-cli" target="_blank">https://github.com/browniebroke/deezer-oauth-cli</a>
+
+---
+
 A small CLI to quickly obtain an API token for the Deezer API.
 
 Obtaining API token to develop API applications can be complicated and sometimes feel like a chicken and egg situation: it's hard to play with the API without a token, but it can be difficult to get a token without an application to do the OAuth flow.
