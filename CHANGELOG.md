@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.2.0 (2023-11-04)
+
+### Feature
+
+- Add the ability to run with python -m deezer_oauth (#394) ([`2c56fe3`](https://github.com/browniebroke/deezer-oauth-cli/commit/2c56fe3da51adb311c94de1743b716a7910a6383))
+
 ## v1.1.3 (2023-10-09)
 
 ### Fix
