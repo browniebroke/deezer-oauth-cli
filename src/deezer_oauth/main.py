@@ -1,4 +1,5 @@
 """Simple script to obtain an API token via OAuth."""
+
 from __future__ import annotations
 
 import webbrowser
