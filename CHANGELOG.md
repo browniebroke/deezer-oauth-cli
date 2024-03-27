@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.2.3 (2024-03-27)
+
+### Fix
+
+- Update dependency typer to ^0.11.0 ([`2fffd1c`](https://github.com/browniebroke/deezer-oauth-cli/commit/2fffd1c91c4fa438069b9aa1093a21d9a93413af))
+
 ## v1.2.2 (2024-03-23)
 
 ### Fix
