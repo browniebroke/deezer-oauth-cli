@@ -32,7 +32,7 @@ deezer-oauth = "deezer_oauth.main:app"
 python = "^3.8"
 requests = "^2.27"
 rich = ">=10"
-typer = {extras = ["all"], version = "^0.11.0"}
+typer = {extras = ["all"], version = "^0.12.0"}
 
 [tool.poetry.group.dev.dependencies]
 pyfakefs = "^5.0"
