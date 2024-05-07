@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.2.8 (2024-05-07)
+
+### Fix
+
+- Remove upper bounds for requests and typer ([`4dd820a`](https://github.com/browniebroke/deezer-oauth-cli/commit/4dd820a2e74828abdd8f4641e402bd2435908eff))
+
 ## v1.2.7 (2024-04-09)
 
 ### Fix
