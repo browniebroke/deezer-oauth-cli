@@ -2,7 +2,7 @@
   "extends": ["github>browniebroke/renovate-configs:python"],
   "packageRules": [
     {
-      "packageNames": ["rich"],
+      "packageNames": ["rich", "requests", "typer"],
       "semanticCommitType": "chore"
     }
   ]
