@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.3.0 (2024-05-18)
+
+### Feature
+
+- Migrate from requests to httpx (#526) ([`3214d32`](https://github.com/browniebroke/deezer-oauth-cli/commit/3214d32365e5f1a4b634c8b8ab417aa18acf1338))
+
 ## v1.2.8 (2024-05-07)
 
 ### Fix
