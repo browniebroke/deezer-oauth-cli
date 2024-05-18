@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from urllib.parse import parse_qsl, urlencode
 
-import requests
+import httpx
 
 from deezer_oauth.constants import HOST_NAME, OAUTH_RETURN_PATH, SERVER_PORT
 
@@ -49,7 +49,7 @@ class OAuthDancer:
             }
         )
         url = f"{self.base_url}/oauth/access_token.php?{query}"
-        response = requests.get(url, timeout=10)
+        response = httpx.get(url, timeout=10)
         content = response.content.decode()
         # The body looks like this: 'access_token=blah&expires=1234'
         # -> parse this as querystring and convert to a dictionary
