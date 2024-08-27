@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.3.1 (2024-08-27)
+
+### Fix
+
+- Update dependency httpx to v0.27.2 ([`dfc941c`](https://github.com/browniebroke/deezer-oauth-cli/commit/dfc941c52cafeb5f4a3cbc98eb085f3fbcb9ea2f))
+
 ## v1.3.0 (2024-05-18)
 
 ### Feature
