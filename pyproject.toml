@@ -33,7 +33,7 @@ packages = [
 deezer-oauth = "deezer_oauth.main:app"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 httpx = ">=0.27.0"
 rich = ">=10"
 typer = { extras = [ "all" ], version = ">=0.12.0" }
@@ -46,7 +46,7 @@ pytest-mock = "^3.6"
 respx = "^0.21.1"
 
 [tool.ruff]
-target-version = "py38"
+target-version = "py39"
 line-length = 88
 
 lint.select = [
