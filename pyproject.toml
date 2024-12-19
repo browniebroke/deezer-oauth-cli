@@ -1,50 +1,3 @@
-[build-system]
-build-backend = "poetry.core.masonry.api"
-requires = [ "poetry-core>=1" ]
-
-[tool.poetry]
-name = "deezer-oauth-cli"
-version = "1.4.0"
-description = "A small CLI to quickly obtain an API token for Deezer API."
-authors = [ "Bruno Alla <alla.brunoo@gmail.com>" ]
-license = "MIT"
-readme = "README.md"
-repository = "https://github.com/browniebroke/deezer-oauth-cli"
-documentation = "https://github.com/browniebroke/deezer-oauth-cli/blob/main/README.md"
-classifiers = [
-  "Development Status :: 2 - Pre-Alpha",
-  "Intended Audience :: Developers",
-  "Natural Language :: English",
-  "Operating System :: OS Independent",
-  "Topic :: Software Development :: Libraries",
-  "Programming Language :: Python :: 3.12",
-]
-packages = [
-  { include = "deezer_oauth", from = "src" },
-]
-
-[tool.poetry.urls]
-"Bug Tracker" = "https://github.com/browniebroke/deezer-oauth-cli/issues"
-"Changelog" = "https://github.com/browniebroke/deezer-oauth-cli/blob/main/CHANGELOG.md"
-"Twitter" = "https://twitter.com/_BrunoAlla"
-"Mastodon" = "https://fosstodon.org/@browniebroke"
-
-[tool.poetry.scripts]
-deezer-oauth = "deezer_oauth.main:app"
-
-[tool.poetry.dependencies]
-python = "^3.9"
-httpx = ">=0.27.0"
-rich = ">=10"
-typer = { extras = [ "all" ], version = ">=0.12.0" }
-
-[tool.poetry.group.dev.dependencies]
-pyfakefs = "^5.0"
-pytest = "^8.0.0"
-pytest-cov = "^6.0.0"
-pytest-mock = "^3.6"
-respx = "^0.21.1"
-
 [tool.ruff]
 target-version = "py39"
 line-length = 88
@@ -111,11 +64,16 @@ module = "tests.*"
 allow_untyped_defs = true
 
 [tool.semantic_release]
-version_toml = [ "pyproject.toml:tool.poetry.version" ]
+version_toml = [ "pyproject.toml:project.version" ]
 version_variables = [
   "src/deezer_oauth/__init__.py:__version__",
 ]
-build_command = "pip install poetry && poetry build"
+build_command = """
+pip install uv
+uv lock
+git add uv.lock
+uv build
+"""
 
 [tool.semantic_release.changelog]
 exclude_commit_patterns = [
@@ -133,3 +91,47 @@ match = "main"
 [tool.semantic_release.branches.noop]
 match = "(?!main$)"
 prerelease = true
+
+[dependency-groups]
+dev = [
+    "pyfakefs<6.0,>=5.0",
+    "pytest<9.0.0,>=8.0.0",
+    "pytest-cov<7.0.0,>=6.0.0",
+    "pytest-mock<4.0,>=3.6",
+    "respx<1.0.0,>=0.21.1",
+]
+
+[project]
+authors = [
+    {name = "Bruno Alla", email = "alla.brunoo@gmail.com"},
+]
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = [
+    "httpx>=0.27.0",
+    "rich>=10",
+    "typer[all]>=0.12.0",
+]
+name = "deezer-oauth-cli"
+version = "1.4.0"
+description = "A small CLI to quickly obtain an API token for Deezer API."
+readme = "README.md"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+"Bug Tracker" = "https://github.com/browniebroke/deezer-oauth-cli/issues"
+Changelog = "https://github.com/browniebroke/deezer-oauth-cli/blob/main/CHANGELOG.md"
+Twitter = "https://twitter.com/_BrunoAlla"
+Mastodon = "https://fosstodon.org/@browniebroke"
+repository = "https://github.com/browniebroke/deezer-oauth-cli"
+documentation = "https://github.com/browniebroke/deezer-oauth-cli/blob/main/README.md"
+
+[project.scripts]
+deezer-oauth = "deezer_oauth.main:app"
