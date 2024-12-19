@@ -1,49 +1,52 @@
 [build-system]
-build-backend = "poetry.core.masonry.api"
-requires = [ "poetry-core>=1" ]
+build-backend = "setuptools.build_meta"
+requires = [ "setuptools" ]
 
-[tool.poetry]
+[project]
 name = "deezer-oauth-cli"
 version = "1.4.0"
 description = "A small CLI to quickly obtain an API token for Deezer API."
-authors = [ "Bruno Alla <alla.brunoo@gmail.com>" ]
-license = "MIT"
 readme = "README.md"
-repository = "https://github.com/browniebroke/deezer-oauth-cli"
-documentation = "https://github.com/browniebroke/deezer-oauth-cli/blob/main/README.md"
+license = { text = "MIT" }
+authors = [
+  { name = "Bruno Alla", email = "alla.brunoo@gmail.com" },
+]
+requires-python = ">=3.9"
 classifiers = [
   "Development Status :: 2 - Pre-Alpha",
   "Intended Audience :: Developers",
   "Natural Language :: English",
   "Operating System :: OS Independent",
-  "Topic :: Software Development :: Libraries",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries",
 ]
-packages = [
-  { include = "deezer_oauth", from = "src" },
+
+dependencies = [
+  "httpx>=0.27,<0.28",
+  "rich>=10",
+  "typer[all]>=0.12",
 ]
+urls."Bug Tracker" = "https://github.com/browniebroke/deezer-oauth-cli/issues"
+urls.Changelog = "https://github.com/browniebroke/deezer-oauth-cli/blob/main/CHANGELOG.md"
+urls.documentation = "https://github.com/browniebroke/deezer-oauth-cli/blob/main/README.md"
+urls.Mastodon = "https://fosstodon.org/@browniebroke"
+urls.repository = "https://github.com/browniebroke/deezer-oauth-cli"
+urls.Twitter = "https://twitter.com/_BrunoAlla"
+scripts.deezer-oauth = "deezer_oauth.main:app"
 
-[tool.poetry.urls]
-"Bug Tracker" = "https://github.com/browniebroke/deezer-oauth-cli/issues"
-"Changelog" = "https://github.com/browniebroke/deezer-oauth-cli/blob/main/CHANGELOG.md"
-"Twitter" = "https://twitter.com/_BrunoAlla"
-"Mastodon" = "https://fosstodon.org/@browniebroke"
-
-[tool.poetry.scripts]
-deezer-oauth = "deezer_oauth.main:app"
-
-[tool.poetry.dependencies]
-python = "^3.9"
-httpx = ">=0.27.0"
-rich = ">=10"
-typer = { extras = [ "all" ], version = ">=0.12.0" }
-
-[tool.poetry.group.dev.dependencies]
-pyfakefs = "^5.0"
-pytest = "^8.0.0"
-pytest-cov = "^6.0.0"
-pytest-mock = "^3.6"
-respx = "^0.21.1"
+[dependency-groups]
+dev = [
+  "pyfakefs>=5,<6",
+  "pytest>=8,<9",
+  "pytest-cov>=6,<7",
+  "pytest-mock>=3.6,<4",
+  "respx>=0.21.1,<1",
+]
 
 [tool.ruff]
 target-version = "py39"
@@ -111,11 +114,16 @@ module = "tests.*"
 allow_untyped_defs = true
 
 [tool.semantic_release]
-version_toml = [ "pyproject.toml:tool.poetry.version" ]
+version_toml = [ "pyproject.toml:project.version" ]
 version_variables = [
   "src/deezer_oauth/__init__.py:__version__",
 ]
-build_command = "pip install poetry && poetry build"
+build_command = """
+pip install uv
+uv lock
+git add uv.lock
+uv build
+"""
 
 [tool.semantic_release.changelog]
 exclude_commit_patterns = [
