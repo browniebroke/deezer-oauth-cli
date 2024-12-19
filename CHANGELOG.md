@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.5.0 (2024-12-19)
+
+### Features
+
+- Migrate migrate packaging to uv (#669) ([`5c18ab8`](https://github.com/browniebroke/deezer-oauth-cli/commit/5c18ab8d964e1a5063664b8bc6d6e19150d71aa9))
+
 ## v1.4.0 (2024-10-31)
 
 ### Features
