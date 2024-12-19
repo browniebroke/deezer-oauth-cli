@@ -46,11 +46,9 @@ jobs:
           enable-cache: "true"
       - run: uv sync --no-python-downloads
         shell: bash
-      - name: Test with Pytest
-        run: poetry run pytest --cov=./ --cov-report=xml
+      - run: uv run pytest --cov-report=xml
         shell: bash
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
+      - uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
