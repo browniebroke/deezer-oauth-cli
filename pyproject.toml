@@ -27,9 +27,9 @@ classifiers = [
 ]
 
 dependencies = [
-  "httpx>=0.28,<0.29",
+  "httpx>=0.27",
   "rich>=10",
-  "typer[all]>=0.12",
+  "typer>=0.12",
 ]
 urls."Bug Tracker" = "https://github.com/browniebroke/deezer-oauth-cli/issues"
 urls.Changelog = "https://github.com/browniebroke/deezer-oauth-cli/blob/main/CHANGELOG.md"
@@ -45,7 +45,7 @@ dev = [
   "pytest>=8,<9",
   "pytest-cov>=6,<7",
   "pytest-mock>=3.6,<4",
-  "respx>=0.21.1,<1",
+  "respx>=0.22",
 ]
 
 [tool.ruff]
