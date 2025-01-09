@@ -86,9 +86,7 @@ class LocalRequestHandler(BaseHTTPRequestHandler):
         query_params = dict(parse_qsl(path_bits[1]))
         token_data = self.oauth_dancer.get_token(query_params["code"])
         content = (
-            f"Token: {token_data['access_token']}"
-            "<br>"
-            f"Expires: {token_data['expires']}"
+            f"Token: {token_data['access_token']}<br>Expires: {token_data['expires']}"
         )
         self._render_content(content)
         write_env_file(token_data["access_token"])
