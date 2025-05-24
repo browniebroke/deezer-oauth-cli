@@ -24,7 +24,7 @@ def main(app_id: str, app_secret: str) -> None:
     You should log in/signup at https://developers.deezer.com/ and create an app
     with a redirect URL of 'http://localhost:8080/oauth/return'.
 
-    This will give you an application ID a secret key to give as parameter here.
+    This will give you an application ID a secret key to pass as parameter.
     """
     # Commence OAuth flow
     oauth_dancer = OAuthDancer(app_id=app_id, app_secret=app_secret)
