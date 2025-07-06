@@ -1,15 +1,23 @@
+import click
 from typer.testing import CliRunner
 
 from deezer_oauth.main import app
 
-runner = CliRunner()
+_CLI_RUNNER_KWARGS = {}
+# if click < 8.2.0, add mix_stderr=False to its
+# kwargs to opt-in to new behaviour
+# We should be able to drop this when we drop Python 3.9
+if click.__version__ < "8.2.0":
+    _CLI_RUNNER_KWARGS["mix_stderr"] = False
+
+runner = CliRunner(**_CLI_RUNNER_KWARGS)
 
 
 def test_no_arguments():
     result = runner.invoke(app)
     assert result.exit_code == 2
-    assert "Error" in result.stdout
-    assert "Missing argument 'APP_ID'." in result.stdout
+    assert "Error" in result.stderr
+    assert "Missing argument 'APP_ID'." in result.stderr
 
 
 def test_help():
