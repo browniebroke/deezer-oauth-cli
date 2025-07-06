@@ -8,8 +8,8 @@ runner = CliRunner()
 def test_no_arguments():
     result = runner.invoke(app)
     assert result.exit_code == 2
-    assert "Error" in result.stdout
-    assert "Missing argument 'APP_ID'." in result.stdout
+    assert "Error" in result.stderr
+    assert "Missing argument 'APP_ID'." in result.stderr
 
 
 def test_help():
