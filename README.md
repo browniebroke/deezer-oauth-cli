@@ -49,6 +49,13 @@ Install this via pip (or your favourite package manager):
 
 Before starting to use this tool, you first need to declare your Deezer app in [their developer portal](https://developers.deezer.com). Create a new app with the following Redirect URL: `http://localhost:8080/oauth/return`.
 
+> **Important note**
+>
+> **At the moment, it is not possible to register a new application via the Deezer Developer Portal.**
+>
+> The portal currently displays the message:
+> **"We're not accepting new application creation at this time. Please check again later."**
+
 Once created, Deezer will generate an application ID and secret key for you, that's the 2 parameters that you need to run this tool:
 
 ```shell
