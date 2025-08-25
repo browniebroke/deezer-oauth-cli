@@ -1,22 +1,35 @@
 # CHANGELOG
 
+## v1.5.2 (2025-08-25)
+
+### Bug fixes
+
+- Use spdx expression for license ([`96b46d7`](https://github.com/browniebroke/deezer-oauth-cli/commit/96b46d701defa8beb867e5586beccdadb0dd9c50))
+
+### Testing
+
+- Update assert from stdout to stderr ([`eb59a94`](https://github.com/browniebroke/deezer-oauth-cli/commit/eb59a94cf0d01a415f3678479763effe3c005e10))
+- Update clirunner setup to work on python 3.9 ([`eb59a94`](https://github.com/browniebroke/deezer-oauth-cli/commit/eb59a94cf0d01a415f3678479763effe3c005e10))
+- Add missing test to increase coverage ([`435d92d`](https://github.com/browniebroke/deezer-oauth-cli/commit/435d92d319fdaff0ad79f652580f61f095c9403a))
+- Add missing test case for 100% coverage ([`435d92d`](https://github.com/browniebroke/deezer-oauth-cli/commit/435d92d319fdaff0ad79f652580f61f095c9403a))
+
 ## v1.5.1 (2024-12-20)
 
 ### Bug fixes
 
-- Update dependency httpx to >=0.28,<0.29 (#662) ([`9e764e2`](https://github.com/browniebroke/deezer-oauth-cli/commit/9e764e2f632112f336e723f148c9c202629b10fa))
+- Update dependency httpx to >=0.28,<0.29 ([`9e764e2`](https://github.com/browniebroke/deezer-oauth-cli/commit/9e764e2f632112f336e723f148c9c202629b10fa))
 
 ## v1.5.0 (2024-12-19)
 
 ### Features
 
-- Migrate migrate packaging to uv (#669) ([`5c18ab8`](https://github.com/browniebroke/deezer-oauth-cli/commit/5c18ab8d964e1a5063664b8bc6d6e19150d71aa9))
+- Migrate migrate packaging to uv ([`5c18ab8`](https://github.com/browniebroke/deezer-oauth-cli/commit/5c18ab8d964e1a5063664b8bc6d6e19150d71aa9))
 
 ## v1.4.0 (2024-10-31)
 
 ### Features
 
-- Drop support for python 3.8 (#626) ([`1becc5e`](https://github.com/browniebroke/deezer-oauth-cli/commit/1becc5e311ed03de175e5ba4efd8d8dcbc253035))
+- Drop support for python 3.8 ([`1becc5e`](https://github.com/browniebroke/deezer-oauth-cli/commit/1becc5e311ed03de175e5ba4efd8d8dcbc253035))
 
 ## v1.3.1 (2024-08-27)
 
@@ -28,7 +41,7 @@
 
 ### Features
 
-- Migrate from requests to httpx (#526) ([`3214d32`](https://github.com/browniebroke/deezer-oauth-cli/commit/3214d32365e5f1a4b634c8b8ab417aa18acf1338))
+- Migrate from requests to httpx ([`3214d32`](https://github.com/browniebroke/deezer-oauth-cli/commit/3214d32365e5f1a4b634c8b8ab417aa18acf1338))
 
 ## v1.2.8 (2024-05-07)
 
@@ -82,7 +95,7 @@
 
 ### Features
 
-- Add the ability to run with python -m deezer_oauth (#394) ([`2c56fe3`](https://github.com/browniebroke/deezer-oauth-cli/commit/2c56fe3da51adb311c94de1743b716a7910a6383))
+- Add the ability to run with python -m deezer_oauth ([`2c56fe3`](https://github.com/browniebroke/deezer-oauth-cli/commit/2c56fe3da51adb311c94de1743b716a7910a6383))
 
 ## v1.1.3 (2023-10-09)
 
@@ -106,13 +119,14 @@
 
 ### Features
 
-- Add official support for python 3.12 (#324) ([`1f12202`](https://github.com/browniebroke/deezer-oauth-cli/commit/1f12202abdd4c75e520260092caee0e91db1a967))
+- Add official support for python 3.12 ([`1f12202`](https://github.com/browniebroke/deezer-oauth-cli/commit/1f12202abdd4c75e520260092caee0e91db1a967))
+- Declare official support for python 3.12 ([`1f12202`](https://github.com/browniebroke/deezer-oauth-cli/commit/1f12202abdd4c75e520260092caee0e91db1a967))
 
 ## v1.0.1 (2023-07-19)
 
 ### Bug fixes
 
-- Update release phase to accommodate changes in psr v8 (#305) ([`5ba411d`](https://github.com/browniebroke/deezer-oauth-cli/commit/5ba411d751735a951f066eb781ac085281b57ff5))
+- Update release phase to accommodate changes in psr v8 ([`5ba411d`](https://github.com/browniebroke/deezer-oauth-cli/commit/5ba411d751735a951f066eb781ac085281b57ff5))
 
 ## v1.0.0 (2023-06-27)
 
