@@ -1,13 +1,8 @@
 import http.client
-import sys
 import threading
 
-if sys.version_info < (3, 10):
-    from test.support import threading_cleanup, threading_setup
-else:
-    from test.support.threading_helper import threading_cleanup, threading_setup
-
 import pytest
+from test.support.threading_helper import threading_cleanup, threading_setup
 
 from deezer_oauth.client import OAuthDancer
 from deezer_oauth.server import LocalHTTPServer, LocalRequestHandler, run_server
