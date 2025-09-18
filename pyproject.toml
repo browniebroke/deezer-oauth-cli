@@ -81,6 +81,9 @@ lint.per-file-ignores."tests/**/*" = [
 ]
 lint.isort.known-first-party = [ "deezer_oauth", "tests" ]
 
+[tool.pyproject-fmt]
+max_supported_python = "3.13"
+
 [tool.pytest.ini_options]
 addopts = "-v -Wdefault --cov=deezer_oauth --cov-report=term-missing:skip-covered"
 pythonpath = [ "src" ]
