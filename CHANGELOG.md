@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.7.0 (2025-09-18)
+
+### Features
+
+- Add support for python 3.14 ([`fbd9e35`](https://github.com/browniebroke/deezer-oauth-cli/commit/fbd9e353de29b51cc41f0a4e99b3d8aa2824d12f))
+
 ## v1.6.0 (2025-09-18)
 
 ### Features
