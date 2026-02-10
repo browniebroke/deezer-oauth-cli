@@ -88,13 +88,13 @@ ini_options.addopts = "-v -Wdefault --cov=deezer_oauth --cov-report=term-missing
 ini_options.pythonpath = [ "src" ]
 
 [tool.coverage]
-report.ignore_errors = true
+run.branch = true
 report.exclude_lines = [
-  "pragma: no cover",
   "@overload",
   "if TYPE_CHECKING",
+  "pragma: no cover",
 ]
-run.branch = true
+report.ignore_errors = true
 
 [tool.mypy]
 check_untyped_defs = true
