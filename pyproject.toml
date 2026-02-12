@@ -84,6 +84,7 @@ lint.isort.known-first-party = [ "deezer_oauth", "tests" ]
 max_supported_python = "3.14"
 
 [tool.pytest]
+minversion = "9.0"
 addopts = [ "-v", "-Wonce", "--cov=deezer_oauth" ]
 pythonpath = [ "src" ]
 
