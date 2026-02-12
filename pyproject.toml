@@ -84,8 +84,8 @@ lint.isort.known-first-party = [ "deezer_oauth", "tests" ]
 max_supported_python = "3.14"
 
 [tool.pytest]
-ini_options.addopts = "-v -Wdefault --cov=deezer_oauth --cov-report=term-missing:skip-covered"
-ini_options.pythonpath = [ "src" ]
+addopts = "-v -Wdefault --cov=deezer_oauth --cov-report=term-missing:skip-covered"
+pythonpath = [ "src" ]
 
 [tool.coverage]
 run.branch = true
