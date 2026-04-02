@@ -3,7 +3,7 @@ import sys
 
 
 def test_can_run_as_python_module():
-    result = subprocess.run(  # noqa: S603
+    result = subprocess.run(
         [sys.executable, "-m", "deezer_oauth", "--help"],
         check=True,
         capture_output=True,
