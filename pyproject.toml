@@ -45,6 +45,7 @@ dev = [
   "pytest-cov>=7,<8",
   "pytest-mock>=3.6,<4",
   "respx>=0.22",
+  "ty==0.0.31",
 ]
 
 [tool.ruff]
@@ -83,17 +84,9 @@ lint.isort.known-first-party = [ "deezer_oauth", "tests" ]
 [tool.pyproject-fmt]
 max_supported_python = "3.14"
 
-[tool.mypy]
-check_untyped_defs = true
-disallow_any_generics = true
-disallow_incomplete_defs = true
-disallow_untyped_defs = true
-mypy_path = "src/"
-no_implicit_optional = true
-show_error_codes = true
-warn_unreachable = true
-warn_unused_ignores = true
-overrides = [ { module = "tests.*", allow_untyped_defs = true } ]
+[tool.ty]
+terminal.error-on-warning = true
+analysis.allowed-unresolved-imports = [ "test.**" ]
 
 [tool.pytest]
 minversion = "9.0"

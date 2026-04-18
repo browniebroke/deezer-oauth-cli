@@ -50,7 +50,7 @@ class ServerWrapperThread(threading.Thread):
             LocalRequestHandler,
         )
         self.test_class.host, self.test_class.port = self.server.socket.getsockname()
-        self.test_class.server_started.set()
+        self.test_class.server_started.set()  # ty: ignore[unresolved-attribute]
         self.test_class = None
         try:
             self.server.serve_forever(0.05)
