@@ -87,6 +87,12 @@ max_supported_python = "3.14"
 [tool.ty]
 terminal.error-on-warning = true
 
+[[tool.ty.overrides]]
+include = ["tests/**"]
+
+[tool.ty.overrides.analysis]
+allowed-unresolved-imports = ["test.**"]
+
 [tool.pytest]
 minversion = "9.0"
 addopts = [ "-v", "-Wonce", "--cov=deezer_oauth" ]
