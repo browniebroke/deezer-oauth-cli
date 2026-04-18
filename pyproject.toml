@@ -86,7 +86,6 @@ max_supported_python = "3.14"
 
 [tool.ty]
 terminal.error-on-warning = true
-analysis.allowed-unresolved-imports = [ "test.**" ]
 
 [tool.pytest]
 minversion = "9.0"
