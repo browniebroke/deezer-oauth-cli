@@ -89,8 +89,8 @@ terminal.error-on-warning = true
 analysis.allowed-unresolved-imports = [ "test.**" ]
 
 [tool.pytest]
-minversion = "9.0"
 addopts = [ "-v", "-Wonce", "--cov=deezer_oauth" ]
+minversion = "9.0"
 pythonpath = [ "src" ]
 
 [tool.coverage]
@@ -103,10 +103,10 @@ report.exclude_lines = [
 report.ignore_errors = true
 
 [tool.semantic_release]
-version_toml = [ "pyproject.toml:project.version" ]
 version_variables = [
   "src/deezer_oauth/__init__.py:__version__",
 ]
+version_toml = [ "pyproject.toml:project.version" ]
 build_command = """
 pip install uv
 uv lock
@@ -116,9 +116,9 @@ uv build
 branches.main.match = "main"
 branches.noop.match = "(?!main$)"
 branches.noop.prerelease = true
+changelog.environment.keep_trailing_newline = true
 changelog.exclude_commit_patterns = [
   "chore.*",
   "ci.*",
   "Merge pull request .*",
 ]
-changelog.environment.keep_trailing_newline = true
