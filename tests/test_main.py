@@ -9,7 +9,7 @@ def test_no_arguments():
     result = runner.invoke(app)
     assert result.exit_code == 2
     assert "Error" in result.stderr
-    assert "Missing argument 'APP_ID'." in result.stderr
+    assert "Missing argument 'app_id'." in result.stderr
 
 
 def test_help():

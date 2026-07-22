@@ -2,7 +2,6 @@ import http.client
 import threading
 
 import pytest
-from test.support.threading_helper import threading_cleanup, threading_setup
 
 from deezer_oauth.client import OAuthDancer
 from deezer_oauth.server import LocalHTTPServer, LocalRequestHandler, run_server
@@ -38,8 +37,9 @@ class ServerWrapperThread(threading.Thread):
     """
 
     server: LocalHTTPServer
+    test_class: "TestLocalRequestHandler | None"
 
-    def __init__(self, test_class):
+    def __init__(self, test_class: "TestLocalRequestHandler"):
         threading.Thread.__init__(self)
         self.test_class = test_class
 
@@ -49,8 +49,9 @@ class ServerWrapperThread(threading.Thread):
             ("localhost", 0),
             LocalRequestHandler,
         )
+        assert self.test_class is not None
         self.test_class.host, self.test_class.port = self.server.socket.getsockname()
-        self.test_class.server_started.set()  # ty: ignore[unresolved-attribute]
+        self.test_class.server_started.set()
         self.test_class = None
         try:
             self.server.serve_forever(0.05)
@@ -69,16 +70,12 @@ class TestLocalRequestHandler:
 
     @pytest.fixture
     def http_server(self):
-        _threads = threading_setup()
         self.server_started = threading.Event()
         thread = ServerWrapperThread(self)
         thread.start()
         self.server_started.wait()
         yield
         thread.stop()
-        # clear assignment to avoid dangling thread
-        thread = None  # type: ignore[assignment]
-        threading_cleanup(*_threads)
 
     def request(self, uri, method="GET"):
         self.connection = http.client.HTTPConnection(self.host, self.port)
