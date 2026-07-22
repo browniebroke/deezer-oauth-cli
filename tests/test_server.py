@@ -37,8 +37,9 @@ class ServerWrapperThread(threading.Thread):
     """
 
     server: LocalHTTPServer
+    test_class: "TestLocalRequestHandler | None"
 
-    def __init__(self, test_class):
+    def __init__(self, test_class: "TestLocalRequestHandler"):
         threading.Thread.__init__(self)
         self.test_class = test_class
 
@@ -48,8 +49,9 @@ class ServerWrapperThread(threading.Thread):
             ("localhost", 0),
             LocalRequestHandler,
         )
+        assert self.test_class is not None
         self.test_class.host, self.test_class.port = self.server.socket.getsockname()
-        self.test_class.server_started.set()  # ty: ignore[unresolved-attribute]
+        self.test_class.server_started.set()
         self.test_class = None
         try:
             self.server.serve_forever(0.05)
