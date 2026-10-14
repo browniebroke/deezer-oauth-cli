@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, cast
 from urllib.parse import parse_qsl
 
 from deezer_oauth.constants import HOST_NAME, OAUTH_RETURN_PATH, SERVER_PORT
@@ -53,12 +53,10 @@ PAGE_CONTENT = """
 class LocalRequestHandler(BaseHTTPRequestHandler):
     """Simple HTTP request handler to perform the OAuth dance."""
 
-    server: LocalHTTPServer
-
     @property
     def oauth_dancer(self) -> OAuthDancer:
         """Shortcut to access the `OAuthDancer` instance."""
-        return self.server.oauth_dancer
+        return cast(LocalHTTPServer, self.server).oauth_dancer
 
     def do_GET(self) -> None:
         """Route GET requests to the right handler."""
