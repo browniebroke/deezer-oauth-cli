@@ -26,7 +26,7 @@ classifiers = [
   "Topic :: Software Development :: Libraries",
 ]
 dependencies = [
-  "httpx>=0.27",
+  "httpx2>=2.16",
   "rich>=10",
   "typer>=0.12",
 ]
@@ -43,8 +43,9 @@ dev = [
   "pyfakefs>=6,<7",
   "pytest>=9,<10",
   "pytest-cov>=7,<8",
+  "pytest-httpx2>=1,<2",
   "pytest-mock>=3.6,<4",
-  "respx>=0.22",
+  "respx>=0.23",
   "ty==0.0.99",
 ]
 
