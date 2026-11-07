@@ -1,8 +1,11 @@
-import httpx
-import pytest
-import respx
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
 
 from deezer_oauth.client import OAuthDancer
+
+if TYPE_CHECKING:
+    import respx
 
 
 class TestOAuthDancer:
@@ -17,15 +20,11 @@ class TestOAuthDancer:
             "%2Cdelete_library%2Clistening_history"
         )
 
-    @pytest.mark.respx(base_url="https://connect.deezer.com")
-    def test_get_token(self, respx_mock: respx.MockRouter) -> None:
-        get_token_route: respx.Route = respx_mock.get("/oauth/access_token.php")
-        get_token_route.mock(
-            return_value=httpx.Response(
-                status_code=200,
-                text="access_token=blah&expires=1234",
-            )
+    def test_get_token(self, httpx2_mock: respx.MockRouter) -> None:
+        get_token_route: respx.Route = httpx2_mock.get(
+            "https://connect.deezer.com/oauth/access_token.php"
         )
+        get_token_route.respond(200, text="access_token=blah&expires=1234")
         dancer = OAuthDancer(app_id="abcd", app_secret="secret")  # noqa S106
         result = dancer.get_token("my-personal-code")
         assert result == {"access_token": "blah", "expires": "1234"}
