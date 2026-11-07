@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v2.1.0 (2026-11-07)
+
+### Features
+
+- Migrate from httpx to httpx2 ([`f42b266`](https://github.com/browniebroke/deezer-oauth-cli/commit/f42b266e6805377c457318605309f078fccc5765))
+
 ## v2.0.0 (2026-11-07)
 
 ### Features
