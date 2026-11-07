@@ -170,7 +170,7 @@ wheels = [
 
 [[package]]
 name = "deezer-oauth-cli"
-version = "1.8.0"
+version = "2.0.0"
 source = { editable = "." }
 dependencies = [
     { name = "httpx" },
